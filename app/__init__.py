@@ -1,0 +1,1 @@
+"""Offline attendance backend package."""

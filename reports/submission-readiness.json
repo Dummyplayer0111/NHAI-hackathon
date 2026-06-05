@@ -1,0 +1,177 @@
+{
+  "generatedAt": "2026-06-05T10:00:15.812070+00:00",
+  "model": {
+    "path": "MobileFaceNet.onnx",
+    "mobilePath": "mobile/assets/models/MobileFaceNet.onnx",
+    "sizeMb": 3.81,
+    "mobileSizeMb": 3.81,
+    "targetSizeMb": 20,
+    "withinTarget": true,
+    "sha256": "6a2722edc8168a7ac3dcb2c21f5649654f8089ab6ee43c59a0a5ddcffca1f726",
+    "mobileSha256": "6a2722edc8168a7ac3dcb2c21f5649654f8089ab6ee43c59a0a5ddcffca1f726",
+    "artifactsMatch": true
+  },
+  "api": {
+    "health": {
+      "path": "/health",
+      "status": 200,
+      "durationMs": 11.9,
+      "body": {
+        "status": "ok",
+        "mongodb": "connected",
+        "environment": "development"
+      }
+    },
+    "modelMetadata": {
+      "path": "/model/metadata",
+      "status": 200,
+      "durationMs": 1.5,
+      "body": {
+        "name": "MobileFaceNet",
+        "version": "mobilefacenet-onnx-v1",
+        "format": "onnx",
+        "path": "MobileFaceNet.onnx",
+        "sha256": "6a2722edc8168a7ac3dcb2c21f5649654f8089ab6ee43c59a0a5ddcffca1f726",
+        "sizeMb": 3.81,
+        "targetSizeMb": 20.0,
+        "withinTargetSize": true,
+        "embeddingSize": 128,
+        "inputShape": [
+          1,
+          3,
+          112,
+          112
+        ],
+        "openSourceRuntime": "onnxruntime-react-native or onnxruntime-mobile"
+      }
+    },
+    "systemRequirements": {
+      "path": "/system/requirements",
+      "status": 200,
+      "durationMs": 1.31,
+      "body": {
+        "frameworkCompatibility": {
+          "mobile": "React Native",
+          "androidMinVersion": "8.0",
+          "iosMinVersion": "12.0",
+          "minimumRamGb": 3
+        },
+        "performanceTargets": {
+          "maxRecognitionAndLivenessMs": 1000,
+          "targetModelSizeMb": 20.0,
+          "accuracyTarget": ">95%"
+        },
+        "offlineMode": {
+          "backendCallsDuringOfflineAuth": 0,
+          "localRecordStatus": "pending",
+          "syncWhenNetworkReturns": true,
+          "purgeOnlyAfterServerAck": true
+        },
+        "liveness": {
+          "supportedChallenges": [
+            "blink",
+            "smile",
+            "turn_left",
+            "turn_right"
+          ],
+          "runsOnDevice": true
+        },
+        "model": {
+          "name": "MobileFaceNet",
+          "version": "mobilefacenet-onnx-v1",
+          "format": "onnx",
+          "path": "MobileFaceNet.onnx",
+          "sha256": "6a2722edc8168a7ac3dcb2c21f5649654f8089ab6ee43c59a0a5ddcffca1f726",
+          "sizeMb": 3.81,
+          "targetSizeMb": 20.0,
+          "withinTargetSize": true,
+          "embeddingSize": 128,
+          "inputShape": [
+            1,
+            3,
+            112,
+            112
+          ],
+          "openSourceRuntime": "onnxruntime-react-native or onnxruntime-mobile"
+        }
+      }
+    }
+  },
+  "checks": {
+    "backendTests": {
+      "command": ".venv/bin/python -m unittest discover -s tests",
+      "exitCode": 0,
+      "durationMs": 668.96,
+      "outputTail": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n"
+    },
+    "pythonDependencies": {
+      "command": ".venv/bin/pip check",
+      "exitCode": 0,
+      "durationMs": 283.34,
+      "outputTail": "No broken requirements found.\n"
+    },
+    "mobileTypecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "durationMs": 707.2,
+      "outputTail": "\n> nhai-offline-attendance-mobile@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    "mobileLivenessCheck": {
+      "command": "npm run test:liveness",
+      "exitCode": 0,
+      "durationMs": 559.18,
+      "outputTail": "\n> nhai-offline-attendance-mobile@1.0.0 test:liveness\n> tsc -p tsconfig.liveness.json && node .tmp-tests/scripts/liveness-check.js\n\nliveness checks passed\n"
+    },
+    "mobileCaptureCheck": {
+      "command": "npm run test:capture",
+      "exitCode": 0,
+      "durationMs": 927.1,
+      "outputTail": "\n> nhai-offline-attendance-mobile@1.0.0 test:capture\n> tsc -p tsconfig.liveness.json && node .tmp-tests/scripts/capture-check.js\n\ncapture checks passed\n"
+    },
+    "mobileNativePrebuildCheck": {
+      "command": "npm run test:native-prebuild",
+      "exitCode": 0,
+      "durationMs": 531.53,
+      "outputTail": "\n> nhai-offline-attendance-mobile@1.0.0 test:native-prebuild\n> tsc -p tsconfig.liveness.json && node .tmp-tests/scripts/native-prebuild-check.js\n\nnative prebuild checks passed\n"
+    },
+    "mobileLivenessBenchmark": {
+      "command": "npm run benchmark:liveness",
+      "exitCode": 0,
+      "durationMs": 497.67,
+      "outputTail": "\n> nhai-offline-attendance-mobile@1.0.0 benchmark:liveness\n> tsc -p tsconfig.liveness.json && node .tmp-tests/scripts/liveness-benchmark.js\n\n{\"iterations\":1000,\"checksPerIteration\":5,\"averageMs\":0.004,\"p95Ms\":0.008,\"maxMs\":0.22758300000000276,\"targetMs\":1000,\"withinTarget\":true}\n"
+    },
+    "mobileAudit": {
+      "command": "npm audit --audit-level=moderate",
+      "exitCode": 0,
+      "durationMs": 639.85,
+      "outputTail": "found 0 vulnerabilities\n"
+    },
+    "expoCompatibility": {
+      "command": "npx expo install --check",
+      "exitCode": 0,
+      "durationMs": 661.75,
+      "outputTail": "Dependencies are up to date\n"
+    },
+    "expoProductionConfig": {
+      "command": "env APP_ENV=production npx expo config --type public",
+      "exitCode": 0,
+      "durationMs": 315.63,
+      "outputTail": "ht'\u001b[39m,\n  plugins: [\n    [\n      \u001b[32m'expo-camera'\u001b[39m,\n      {\n        cameraPermission: \u001b[32m'Camera access is required to verify field personnel offline.'\u001b[39m\n      }\n    ],\n    \u001b[32m'expo-secure-store'\u001b[39m,\n    \u001b[32m'./plugins/withNHAIFaceCapture'\u001b[39m\n  ],\n  description: \u001b[90mundefined\u001b[39m,\n  sdkVersion: \u001b[32m'56.0.0'\u001b[39m,\n  platforms: [\n    \u001b[32m'ios'\u001b[39m,\n    \u001b[32m'android'\u001b[39m\n  ],\n  ios: {\n    supportsTablet: \u001b[33mfalse\u001b[39m,\n    deploymentTarget: \u001b[32m'12.0'\u001b[39m,\n    bundleIdentifier: \u001b[32m'in.nhai.offlineattendance'\u001b[39m\n  },\n  android: {\n    minSdkVersion: \u001b[33m26\u001b[39m,\n    package: \u001b[32m'in.nhai.offlineattendance'\u001b[39m,\n    permissions: [\n      \u001b[32m'CAMERA'\u001b[39m,\n      \u001b[32m'ACCESS_FINE_LOCATION'\u001b[39m,\n      \u001b[32m'android.permission.CAMERA'\u001b[39m,\n      \u001b[32m'android.permission.RECORD_AUDIO'\u001b[39m\n    ]\n  },\n  extra: {\n    apiBaseUrl: \u001b[32m'http://127.0.0.1:8000'\u001b[39m,\n    appVersion: \u001b[32m'1.0.0'\u001b[39m,\n    enablePrototypeBiometricAdapter: \u001b[33mfalse\u001b[39m\n  }\n}\n\n"
+    }
+  },
+  "livenessBenchmark": {
+    "iterations": 1000,
+    "checksPerIteration": 5,
+    "averageMs": 0.004,
+    "p95Ms": 0.008,
+    "maxMs": 0.22758300000000276,
+    "targetMs": 1000,
+    "withinTarget": true
+  },
+  "summary": {
+    "allAutomatedChecksPassed": true,
+    "backendReachable": true,
+    "modelIntegrityVerified": true,
+    "livenessBenchmarkWithinTarget": true
+  }
+}

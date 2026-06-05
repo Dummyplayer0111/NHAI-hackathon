@@ -1,0 +1,9 @@
+{
+  "iterations": 1000,
+  "checksPerIteration": 5,
+  "averageMs": 0.004,
+  "p95Ms": 0.008,
+  "maxMs": 0.22758300000000276,
+  "targetMs": 1000,
+  "withinTarget": true
+}

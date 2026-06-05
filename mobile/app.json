@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "NHAI Offline Attendance",
+    "slug": "nhai-offline-attendance",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "deploymentTarget": "12.0",
+      "bundleIdentifier": "in.nhai.offlineattendance"
+    },
+    "android": {
+      "minSdkVersion": 26,
+      "package": "in.nhai.offlineattendance",
+      "permissions": ["CAMERA", "ACCESS_FINE_LOCATION"]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera access is required to verify field personnel offline."
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "apiBaseUrl": "http://127.0.0.1:8000",
+      "appVersion": "1.0.0",
+      "enablePrototypeBiometricAdapter": true
+    }
+  }
+}

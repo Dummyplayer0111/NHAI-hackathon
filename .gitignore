@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.pycache/
+*.pyc
+node_modules/
+mobile/node_modules/
+mobile/.expo/
+mobile/.tmp-tests/
+mobile/android/
+mobile/ios/
+npm-debug.log*
+.env

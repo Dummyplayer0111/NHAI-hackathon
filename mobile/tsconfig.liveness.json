@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": ".tmp-tests",
+    "module": "commonjs",
+    "target": "es2020",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src/types.ts",
+    "src/constants.ts",
+    "src/services/liveness.ts",
+    "src/services/faceCaptureCamera.ts",
+    "src/services/faceCapturePayload.ts",
+    "scripts/liveness-check.ts",
+    "scripts/capture-check.ts",
+    "scripts/native-prebuild-check.ts",
+    "scripts/liveness-benchmark.ts"
+  ]
+}
